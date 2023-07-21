@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <input type="text" name="name" id="name" /><br /><br />
+        <input type="text" name="count" id="count" /> <br /><br />
+        <input type="submit" value="Yuborish" />
+    </form>
+</body>
+<script>
+    async function bootstrap() {
+        const data = await fetch("http://localhost:4000/products/update");
+        console.log(await data.json());
+    }
+
+    bootstrap();
+
+    const form = document.querySelector("form");
+    const name = document.querySelector("#name");
+    const count = document.querySelector("#count");
+
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const nameValue = name.value;
+        const countValue = count.value;
+
+        await fetch("http://localhost:4000/products/update", {
+            body: JSON.stringify({ name: nameValue, count: countValue }),
+            method: "POST",
+        });
+
+        bootstrap();
+
+        // localStorage.setItem("title", titleValue);
+        // localStorage.setItem("text", textValue);
+
+        name.value = "";
+        count.value = "";
+        buyPrice.value = "";
+        sellPrice.value = "";
+    });
+
+    // console.log(localStorage.getItem("title"));
+    // localStorage.removeItem("title");
+</script>
+
+</html>

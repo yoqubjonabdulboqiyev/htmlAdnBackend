@@ -1,0 +1,5 @@
+-- Mahsulot yangi qo'sha olamiz +
+-- Mahsulotlarni ko'ra olamiz +
+-- Skladga bor mahsulorni sonini oshira olamiz +
+-- Mahsulotlarni sota olamiz +
+-- mahsulotni nomi bo'yicha qidira olamiz
